@@ -20,6 +20,7 @@
  */
  
 #include <stdio.h>
+#include <math.h>
  
 int main(void) {
 	
@@ -29,7 +30,7 @@ int main(void) {
     scanf("%d", &year);
 	
 	// Complete your code here
-	if (){  // todo
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){  // todo
 		printf("Leap Year\n");
 	} else{
 		printf("Not a Leap Year\n");
