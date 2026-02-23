@@ -14,7 +14,7 @@
  * 4. If D < 0: Identify and calculate real and imaginary parts
  *    imaginary part formula: sqrt(-D)/(2*a)
  */
- 
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>   //for atof()
@@ -33,6 +33,36 @@ int main(int argc, char *argv[]) {
     float c = atof(argv[3]);
 	
 	//complete the rest of the code
+    if(a == 0){
+        //print linear equation
+        printf("Equation is linear\n");
+        return 0;
+    }
+
+    //Calculate the discriminant
+    float d = ((b*b)-(4*a*c));
+
+    //If the solution has 2 roots
+    if(d > 0){
+        float root1 = ((-b+sqrt(d))/(2*a));
+        float root2 = ((-b-sqrt(d))/(2*a));
+        printf("The first root solution is : %.3f\n", root1);
+        printf("The second root solution is : %.3f\n", root2);
+    }
+    //If the solution has 1 root
+    else if(d == 0){
+        float root = (-b/(2*a));
+        printf("The root for this equation is : %.3f\n", root);
+    }
+    //If the solution is imaginary
+    else {
+        float imaginary_root = -b/(2*a);
+        float real_root = (sqrt(-d)/(2*a));
+        printf("Complex roots:\n");
+        printf("Root 1 = %.3f + %.3fi\n", real_root, imaginary_root);
+        printf("Root 2 = %.3f - %.3fi\n", real_root, imaginary_root);
+    }
+    
 	
 	return 0;
 }
