@@ -21,7 +21,31 @@ int main(void){
 	
 	// complete the rest of the code here
 	// use pointer to modify the values
-	//int (*row_ptr)[4] = image; 
+	int (*row_ptr)[4] = image; 
+
+	for(int i = 0; i < 3; i++){
+		for(int j = 0; j <4 ; j++){
+			//pointer to each pixel
+			int *pixel_ptr = *(row_ptr + i)+j;
+
+			//increase the brightness
+			*pixel_ptr +=boost;
+
+			//clamp the value to 255
+			if(*pixel_ptr > max_val){
+				*pixel_ptr = max_val;
+			}
+		}
+	}
+
+	//print the results
+	for(int i = 0; i < 3; i++){
+		for(int j = 0; j <4 ; j++){
+			printf("%d ",image[i][j]);
+		}
+		printf("\n");
+	}
+
 	
 	return 0;
 

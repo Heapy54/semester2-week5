@@ -39,6 +39,38 @@ int main() {
     printf("Ciphered: ");
 	
 	//complete the your code here
+    //outer loop is columns
+    for(int col = 0; col < grid_size; col ++){
+        //innner loop is rows
+        for(int row = 0; row<grid_size; row++){
+            int index = row * grid_size + col;
+            printf("%c", message[index]);
+        }
+    }
+
+
+    /*
+    char cipher[4][4];
+
+    int message_size = (sizeof(message)/sizeof(message[0]))-1;
+    int end_string = 0;
+    
+    for(int col = 0; col<grid_size; col++){
+        for(int row = 0; row<grid_size; row++){
+            cipher[row][col] = message[end_string];
+            end_string += 1;
+        }
+    }
+
+        for(int col = 0; col<grid_size; col++){
+            for(int row = 0; row<grid_size; row++){
+                printf("%c", cipher[col][row]);
+            }
+        }
+        */
+    printf("\n");
+
+
 
 
     return 0;
