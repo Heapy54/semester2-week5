@@ -16,5 +16,35 @@ int main(void){
  * The same applies to other options except 0. When 0 is entered, the program terminates.
  */
 
+    int choice;
+
+    do
+    {
+        printf(" * Menu options are:\n* 1 - Coffee\n* 2 - Tea\n* 3 - Cold drinks\n* 0 - to quit\n");
+        scanf(" %d",&choice);
+        switch (choice)
+        {
+        case 0 :
+            break;
+        
+        case 1 :
+            printf("You selected Coffee\n");
+            break;
+        
+        case 2 :
+        printf("You selected Tea\n");
+        break;
+
+        case 3 :
+            printf("You selected Cold drinks\n");
+            break;
+        
+        default:
+            printf("Enter valid choice\n");
+            break;
+        }
+    } while (choice != 0);
+    
+
     return 0;
 }
